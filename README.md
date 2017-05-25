@@ -8,6 +8,6 @@ Setup:
   
 Set the refresh tab to 'Periodically' and a low refresh rate. Make sure the checkbox next to the Network Link is check then run 'tracker.py'.
 
-It's updating once every 30 seconds to keep from spamming their servers.
+It updates once every 30 seconds to keep from spamming their servers.
 
 ![Map with buses](http://i.imgur.com/3LBFRA4.jpg)
