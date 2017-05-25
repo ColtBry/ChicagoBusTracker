@@ -1,0 +1,38 @@
+#Header
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+    <Document>
+        <name>Buses</name>
+        <Schema name="Buses"></Schema>
+        <Folder>
+#Point
+            <Placemark name="{id}">
+                <Style>
+                    <IconStyle>
+                        <Icon>
+                            <href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href>
+                        </Icon>
+                        <heading>{bearing}</heading>
+                        <color>ff{c}</color>
+                        <scale>.6</scale>
+                    </IconStyle>
+                    <LabelStyle>
+                        <scale>.7</scale>
+                    </LabelStyle>
+                </Style>
+                <name>{id}</name>
+                <description>
+           Speed: {speed} MPH
+           Avg Spd: {avg_speed} MPH
+           Route: {rt}
+           Bearing: {bearing}°
+           Driver: {op}
+                </description>
+                <Point>
+                    <coordinates>{lon},{lat},0</coordinates>
+                </Point>
+            </Placemark>
+#Footer
+        </Folder>
+    </Document>
+</kml>
