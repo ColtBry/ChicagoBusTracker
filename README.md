@@ -1,5 +1,5 @@
 # ChicagoBusTracker
-A program that tracks all of Chicago's and calculates a lot of information on them.
+A program that tracks all of Chicago's buses and calculates a lot of information on them.
 
 One of the first programs I ever wrote was this. I wanted to come back and completely rewrite it and see how much I've improved and how my approach to the problem has changed.
 
