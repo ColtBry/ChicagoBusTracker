@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+    <Document>
+        <name>Buses</name>
+        <Schema name="Buses"></Schema>
+        <Folder>
+        </Folder>
+    </Document>
+</kml>
