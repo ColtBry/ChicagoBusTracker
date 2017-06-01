@@ -1,8 +1,8 @@
 import xml.etree.ElementTree as ET
 import requests
 import time
+import atextit
 
-import atexit
 from os import _exit
 
 import template_operations as template_ops
@@ -23,7 +23,7 @@ def main():
         data = session.get(url).text.replace('&', '')
         return ET.fromstring(data)
 
-    def xml_to_dicts(xml):
+    def xml_to_dicts(xml): # Converts the raw XML to a dictionary
         dictionaries = []
 
         for node in xml:
@@ -33,7 +33,7 @@ def main():
             dictionaries.append(element)
         return dictionaries
 
-    def write_kml_file(buses, templates, path):
+    def write_kml_file(buses, templates, path): # Creates the KML file from a list of bus objects
         with open(path, 'w') as file:
             file.write(templates['Header'])
             for bus in buses:
@@ -59,21 +59,21 @@ def main():
                 active_buses[bus['id']].update(bus, timestamp)
                 inactive_buses.remove(bus['id'])
             except KeyError:
-                active_buses[bus['id']] = Bus(bus, timestamp)
+                active_buses[bus['id']] = Bus(bus, timestamp) # Creates bus object if it doesn't exist.
 
         for bus_id in inactive_buses: # Removes buses that aren't active
             active_buses.pop(bus_id)
 
         write_kml_file(buses, templates, KML_FILE)
 
-        time.sleep(30) # 
-
-atexit.register(exit_handler)
-
-print('\nRunning... see the ReadMe for help.')
-print('\nPress Ctrl+C to exit.')
+        time.sleep(30)
 
 if __name__ == '__main__':
+    atexit.register(exit_handler)
+
+    print('\nRunning... see the ReadMe for help.')
+    print('\nPress Ctrl+C to exit.')
+
     try:
         main()
     except KeyboardInterrupt:
